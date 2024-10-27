@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            border: 5px solid #3498db; /* Blue border around the entire page */
+            background-color: #eaf4fc; /* Light blue background color */
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* To stack elements (website name and forms) vertically */
+            height: 100vh; /* Full view height for centering */
+        }
+
+        /* Header Styling */
+        #webname {
+            text-align: center; /* Centering the website name */
+            padding: 10px;
+            width: 100%; /* Ensures it stretches across the entire width */
+            position: fixed;
+            top: 0;
+            background-color:  #2c3e50; 
+            color: white; /* White background for the header */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for the header */
+        }
+
+        /* Form Container */
+        .container-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Gap between forms */
+            padding: 20px;
+            margin-top: 80px; /* Add margin to ensure forms don't overlap with the header */
+        }
+
+        form {
+            border: 3px solid #3498db; /* Blue border around the forms */
+            border-radius: 8px;
+            width: 30%; /* Adjust form width */
+            margin: auto; /* Centers the forms */
+            padding: 20px; /* Increased padding for better spacing */
+            box-sizing: border-box;
+            background-color: #ffffff; /* White background for the forms */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for the forms */
+        }
+
+        input[type=text], input[type=password] {
+            width: 90%; /* Adjusted width for input boxes */
+            padding: 10px 12px; /* Adjusted padding */
+            margin: 6px 0; /* Adjusted margin */
+            display: inline-block;
+            border: 1px solid #bdc3c7; /* Light grey border for inputs */
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: #f9f9f9; /* Slightly off-white background for inputs */
+        }
+
+        button {
+            background-color: #1abc9c; /* Teal button */
+            color: white;
+            padding: 12px 16px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #16a085; /* Darker teal on hover */
+        }
+
+        /* Flexbox container for "Remember me" and "Forgot password?" */
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        span.psw {
+            padding-top: 8px;
+            font-size: 14px;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+
+        .imgcontainer {
+            text-align: center;
+            margin: 12px 0;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 600px) {
+            .container-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Website Name -->
+    <div id="webname">
+        <h2>WEBSITE NAME</h2>
+    </div>
+
+    <!-- Login Forms -->
+    <div class="container-wrapper">
+        <!-- Faculty Login Form -->
+        <form method="post" action="/login"> <!-- Updated action -->
+            <div class="imgcontainer">
+                <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
+                <figcaption>Faculty</figcaption>
+            </div>
+
+            <div class="container">
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" required>
+
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" required>
+
+                <input type="hidden" name="user_type" value="faculty"> <!-- Hidden input for user type -->
+
+                <button type="submit">Login</button>
+
+                <div class="flex-container">
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                    <span class="password">Forgot <a href="#">password?</a></span>
+                </div>
+            </div>
+        </form>
+
+        <!-- Student Login Form -->
+        <form method="post" action="/login"> <!-- Updated action -->
+            <div class="imgcontainer">
+                <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
+                <figcaption>Student</figcaption>
+            </div>
+
+            <div class="container">
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" required>
+
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" required>
+
+                <input type="hidden" name="user_type" value="student"> <!-- Hidden input for user type -->
+
+                <button type="submit">Login</button>
+
+                <div class="flex-container">
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                    <span class="password">Forgot <a href="#">password?</a></span>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

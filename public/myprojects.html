@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <style>
+	.navbar {
+            background-color: #3498db;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+
+        .navbar a:hover {
+            background-color: #2980b9;
+            border-radius: 5px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdf4e3;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table thead tr {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        table tbody tr {
+            background-color: #f9f9f9;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #fff;
+        }
+
+        .status-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .status-text {
+            font-weight: bold;
+            color: #2ecc71;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pagination span {
+            padding: 10px;
+            margin: 0 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .pagination span:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <a href="assigned.html">Assigned Projects</a>
+    <a href="applied.html">Applied Projects</a>
+    <a href="myprojects.html">My Projects</a>
+    </div>
+    <div class="container">
+        <h1>My Projects</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Problem Statement</th>
+                    <th>Details</th>
+                    <th>Assigned Date</th>
+                    <th>Team Size</th>
+                    <th>Status</th>
+                    <th>Last Updated</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Problem A</td>
+                    <td>Details about problem A</td>
+                    <td>2024-09-04</td>
+                    <td>4</td>
+                    <td>
+                        <div class="status-container">
+                            <span class="status-text">Assigned</span>
+                        </div>
+                    </td>
+                    <td>2024-09-04</td>
+                </tr>
+                <tr>
+                    <td>Problem B</td>
+                    <td>Details about problem B</td>
+                    <td>2024-09-03</td>
+                    <td>5</td>
+                    <td>
+                        <div class="status-container">
+                            <span class="status-text">Assigned</span>
+                        </div>
+                    </td>
+                    <td>2024-09-03</td>
+                </tr>
+                <tr>
+                    <td>Problem C</td>
+                    <td>Details about problem C</td>
+                    <td>2024-09-02</td>
+                    <td>3</td>
+                    <td>
+                        <div class="status-container">
+                            <span class="status-text">Assigned</span>
+                        </div>
+                    </td>
+                    <td>2024-09-02</td>
+                </tr>
+                <tr>
+                    <td>Problem D</td>
+                    <td>Details about problem D</td>
+                    <td>2024-09-01</td>
+                    <td>6</td>
+                    <td>
+                        <div class="status-container">
+                            <span class="status-text">Assigned</span>
+                        </div>
+                    </td>
+                    <td>2024-09-01</td>
+                </tr>
+                <tr>
+                    <td>Problem E</td>
+                    <td>Details about problem E</td>
+                    <td>2024-08-31</td>
+                    <td>4</td>
+                    <td>
+                        <div class="status-container">
+                            <span class="status-text">Assigned</span>
+                        </div>
+                    </td>
+                    <td>2024-08-31</td>
+                </tr>
+                <tr>
+                    <td>Problem F</td>
+                    <td>Details about problem F</td>
+                    <td>2024-08-30</td>
+                    <td>2</td>
+                    <td>
+                        <div class="status-container">
+                            <span class="status-text">Assigned</span>
+                        </div>
+                    </td>
+                    <td>2024-08-30</td>
+                </tr>
+                <tr>
+                    <td>Problem G</td>
+                    <td>Details about problem G</td>
+                    <td>2024-08-29</td>
+                    <td>8</td>
+                    <td>
+                        <div class="status-container">
+                            <span class="status-text">Assigned</span>
+                        </div>
+                    </td>
+                    <td>2024-08-29</td>
+                </tr>
+                <tr>
+                    <td>Problem H</td>
+                    <td>Details about problem H</td>
+                    <td>2024-08-28</td>
+                    <td>10</td>
+                    <td>
+                        <div class="status-container">
+                            <span class="status-text">Assigned</span>
+                        </div>
+                    </td>
+                    <td>2024-08-28</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>...</span>
+            <span>6</span>
+        </div>
+    </div>
+</body>
+</html>

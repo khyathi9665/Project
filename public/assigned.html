@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assigned Projects</title>
+    <style>
+   	.navbar {
+            background-color: #f1c40f;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+
+        .navbar a:hover {
+            background-color: #2980b9;
+            border-radius: 5px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdf4e3;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table thead tr {
+            background-color: #f1c40f;
+            color: #fff;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        table tbody tr {
+            background-color: #f9f9f9;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #fff;
+        }
+
+        .status-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .status-bar {
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 100%;
+            height: 20px;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        .status {
+            height: 100%;
+            background-color: #2ecc71;
+            border-radius: 5px;
+        }
+
+        .percentage {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pagination span {
+            padding: 10px;
+            margin: 0 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #f1c40f;
+            color: #fff;
+        }
+
+        .pagination span:hover {
+            background-color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <a href="assigned.html">Assigned Projects</a>
+    <a href="applied.html">Applied Projects</a>
+    <a href="myprojects.html">My Projects</a>
+    </div>
+    <div class="container">
+        <h1>Assigned Projects</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name of the Project</th>
+                    <th>Details</th>
+                    <th>Deadline</th>
+                    <th>Team Size</th>
+                    <th>Status</th>
+                    <th>Last Online</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Project A</td>
+                    <td>Details about project A</td>
+                    <td>2024-10-01</td>
+                    <td>5</td>
+                    <td>
+                        <div class="status-container">
+                            <div class="status-bar">
+                                <div class="status" style="width: 70%;"></div>
+                            </div>
+                            <span class="percentage">70%</span>
+                        </div>
+                    </td>
+                    <td>2024-09-04</td>
+                </tr>
+                <tr>
+                    <td>Project B</td>
+                    <td>Details about project B</td>
+                    <td>2024-09-15</td>
+                    <td>3</td>
+                    <td>
+                        <div class="status-container">
+                            <div class="status-bar">
+                                <div class="status" style="width: 40%;"></div>
+                            </div>
+                            <span class="percentage">40%</span>
+                        </div>
+                    </td>
+                    <td>2024-09-03</td>
+                </tr>
+                <tr>
+                    <td>Project C</td>
+                    <td>Details about project C</td>
+                    <td>2024-11-20</td>
+                    <td>7</td>
+                    <td>
+                        <div class="status-container">
+                            <div class="status-bar">
+                                <div class="status" style="width: 90%;"></div>
+                            </div>
+                            <span class="percentage">90%</span>
+                        </div>
+                    </td>
+                    <td>2024-09-02</td>
+                </tr>
+                <tr>
+                    <td>Project D</td>
+                    <td>Details about project D</td>
+                    <td>2024-12-05</td>
+                    <td>4</td>
+                    <td>
+                        <div class="status-container">
+                            <div class="status-bar">
+                                <div class="status" style="width: 60%;"></div>
+                            </div>
+                            <span class="percentage">60%</span>
+                        </div>
+                    </td>
+                    <td>2024-09-01</td>
+                </tr>
+                <tr>
+                    <td>Project E</td>
+                    <td>Details about project E</td>
+                    <td>2024-08-30</td>
+                    <td>6</td>
+                    <td>
+                        <div class="status-container">
+                            <div class="status-bar">
+                                <div class="status" style="width: 80%;"></div>
+                            </div>
+                            <span class="percentage">80%</span>
+                        </div>
+                    </td>
+                    <td>2024-08-31</td>
+                </tr>
+                <tr>
+                    <td>Project F</td>
+                    <td>Details about project F</td>
+                    <td>2024-07-15</td>
+                    <td>2</td>
+                    <td>
+                        <div class="status-container">
+                            <div class="status-bar">
+                                <div class="status" style="width: 50%;"></div>
+                            </div>
+                            <span class="percentage">50%</span>
+                        </div>
+                    </td>
+                    <td>2024-08-30</td>
+                </tr>
+                <tr>
+                    <td>Project G</td>
+                    <td>Details about project G</td>
+                    <td>2024-10-10</td>
+                    <td>8</td>
+                    <td>
+                        <div class="status-container">
+                            <div class="status-bar">
+                                <div class="status" style="width: 75%;"></div>
+                            </div>
+                            <span class="percentage">75%</span>
+                        </div>
+                    </td>
+                    <td>2024-08-29</td>
+                </tr>
+                <tr>
+                    <td>Project H</td>
+                    <td>Details about project H</td>
+                    <td>2024-11-01</td>
+                    <td>10</td>
+                    <td>
+                        <div class="status-container">
+                            <div class="status-bar">
+                                <div class="status" style="width: 20%;"></div>
+                            </div>
+                            <span class="percentage">20%</span>
+                        </div>
+                    </td>
+                    <td>2024-08-28</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>...</span>
+            <span>6</span>
+        </div>
+    </div>
+</body>
+</html>

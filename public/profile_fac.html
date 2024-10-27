@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f7f6; /* Light background color */
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #2c3e50; /* Dark blue/grey navbar */
+            overflow: hidden;
+            padding: 0px 10px;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+            background-color: #2980b9; /* Lighter blue hover */
+            color: white;
+        }
+
+        /* Logout image on the top-right corner */
+        .navbar .logout {
+            float: right;
+            background-color: transparent; /* Ensure no background */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+        }
+
+        .navbar .logout img {
+            width: 40px; /* Adjust the size of the image */
+            height: 50px;
+            vertical-align: middle;
+            background-color: transparent; /* Ensure no background */
+        }
+
+        /* Centered Profile Form Section */
+        .profile-container {
+            margin: 100px auto; /* Adjusted margin for centering */
+            padding: 20px;
+            max-width: 500px;
+            background-color: #ecf0f1; /* Light grey form background */
+            border: 2px solid #3498db; /* Blue border */
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center-align all text */
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative; /* Ensure the button is positioned relative to this container */
+            margin-bottom: 20px;
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            position: relative; /* Required for the absolute positioning of the button */
+            overflow: hidden; /* Ensure the button stays within the avatar */
+        }
+
+        .camera-btn {
+            background-color: transparent; /* No background color */
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: absolute; /* Positioning the button absolutely within the profile-avatar */
+            bottom: -10px; /* Position the button slightly outside the bottom */
+            right: -20px; /* Position the button slightly outside the right */
+        }
+
+        .camera-btn img {
+            width: 30px; /* Adjust the size of the image */
+            height: 30px;
+        }
+
+        .profile-container input[type="file"] {
+            display: none; /* Hide the default file input */
+        }
+
+        .profile-container label {
+            display: block;
+            text-align: left;
+            margin: 10px 0 5px;
+            color: #2c3e50;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .profile-container input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: #f9f9f9;
+        }
+
+        .profile-container button {
+            padding: 12px 20px;
+            background-color: #1abc9c; /* Green button */
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .profile-container button:hover {
+            background-color: #16a085; /* Darker green on hover */
+        }
+
+        /* Responsive Styling */
+        @media screen and (max-width: 600px) {
+            .profile-container {
+                width: 90%; /* Full width on smaller screens */
+            }
+
+            .profile-header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .profile-avatar {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .camera-btn {
+                margin-top: 10px; /* Space above the button on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="assigned.html">Assigned</a>
+        <a href="tobeassigned.html">To be assigned</a>
+        <a href="completed.html">Completed</a>
+        <a href="login.html" class="logout">
+            <img src="C:\Users\Dell\Downloads\logout.png" alt="Logout">
+        </a>
+    </div>
+
+    <!-- Profile Form Section -->
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Profile Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+                
+                <!-- Camera Button -->
+                <label for="profilePicture" class="camera-btn">
+                    <img src="C:\Users\Dell\Downloads\camera.png" alt="Camera"> 
+                </label>
+            </div>
+        </div>
+        <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
+
+        <form action="#" method="post">
+            <!-- Name Field -->
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <!-- Designation Field -->
+            <label for="designation">Designation</label>
+            <input type="text" id="designation" name="designation" placeholder="Enter your designation" required>
+
+            <!-- Experience Field -->
+            <label for="experience">Experience</label>
+            <input type="text" id="experience" name="experience" placeholder="Enter your experience" required>
+
+            <!-- Email-ID Field -->
+            <label for="email">Email-ID</label>
+            <input type="text" id="email" name="email" placeholder="Enter your email ID" required>
+
+            <!-- Update Button -->
+            <button type="submit">Update Details</button>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector('.camera-btn').addEventListener('click', function() {
+            document.querySelector('#profilePicture').click();
+        });
+    </script>
+
+</body>
+</html>

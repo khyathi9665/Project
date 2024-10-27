@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Assignment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f7f6; /* Light background color */
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #2c3e50; /* Dark blue/grey navbar */
+            overflow: hidden;
+            padding: 0px 20px;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+            background-color: #2980b9; /* Lighter blue hover */
+            color: white;
+        }
+
+        /* Profile on the top-right corner */
+        .navbar .profile {
+            float: right;
+        }
+
+        .navbar .profile img {
+            height: 35px; /* Adjust the size of the profile icon */
+            width: 35px;
+            border-radius: 50%; /* Optional: make the image circular */
+        }
+
+        /* Problem Statement Container */
+        .problem-statement {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            background-color: #ecf0f1; /* Light grey background */
+            border: 2px solid #3498db; /* Blue border */
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Needed for absolute positioning of dropbtn */
+        }
+
+        .problem-statement h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #2c3e50; /* Dark blue/grey for the title */
+        }
+
+        /* Dropdown Styling */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            top: 50%; /* Aligns the dropdown to the button */
+            left: 0; /* Positions the dropdown to the left side */
+            transform: translateY(-50%);
+        }
+
+        .dropdown-content a {
+            color: #2c3e50;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Plus Button Styling */
+        .dropbtn {
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 20px; /* Aligns the button to the left */
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .dropbtn:hover {
+            background-color: #16a085;
+        }
+
+        .assign-btn {
+            cursor: pointer;
+            color: #1abc9c;
+            font-weight: bold;
+        }
+
+        .assign-btn:hover {
+            color: #16a085;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="assigned.html">Assigned</a>
+        <a href="tobeassigned.html">To Be Assigned</a>
+        <a href="completed.html">Completed</a>
+        <a href="profile_fac.html" class="profile"><img src="C:/Users/Dell/Downloads/profile.png" alt="Profile"></a> <!-- Profile icon on top right -->
+    </div>
+
+    <!-- Problem Statements -->
+    <div class="problem-statement">
+        <h2>Problem Statement - 1</h2>
+        <div class="dropdown">
+            <button class="dropbtn">+</button>
+            <div class="dropdown-content">
+                <a href="#">Student 1 <span class="assign-btn">Assign</span></a>
+                <a href="#">Student 2 <span class="assign-btn">Assign</span></a>
+                <a href="#">Student 3 <span class="assign-btn">Assign</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="problem-statement">
+        <h2>Problem Statement - 2</h2>
+        <div class="dropdown">
+            <button class="dropbtn">+</button>
+            <div class="dropdown-content">
+                <a href="#">Student A <span class="assign-btn">Assign</span></a>
+                <a href="#">Student B <span class="assign-btn">Assign</span></a>
+                <a href="#">Student C <span class="assign-btn">Assign</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="problem-statement">
+        <h2>Problem Statement - 3</h2>
+        <div class="dropdown">
+            <button class="dropbtn">+</button>
+            <div class="dropdown-content">
+                <a href="#">Student A <span class="assign-btn">Assign</span></a>
+                <a href="#">Student B <span class="assign-btn">Assign</span></a>
+                <a href="#">Student C <span class="assign-btn">Assign</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="problem-statement">
+        <h2>Problem Statement - 4</h2>
+        <div class="dropdown">
+            <button class="dropbtn">+</button>
+            <div class="dropdown-content">
+                <a href="#">Student A <span class="assign-btn">Assign</span></a>
+                <a href="#">Student B <span class="assign-btn">Assign</span></a>
+                <a href="#">Student C <span class="assign-btn">Assign</span></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for dynamic dropdown behavior
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            const dropbtn = dropdown.querySelector('.dropbtn');
+            const dropdownContent = dropdown.querySelector('.dropdown-content');
+            dropbtn.addEventListener('click', () => {
+                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+
+</body>
+</html>
