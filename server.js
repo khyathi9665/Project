@@ -2,12 +2,14 @@ const express = require('express');
 const mysql = require('mysql');
 const bcrypt = require('bcrypt');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 const app = express();
+const port = 3000;
 
 // Middleware to parse JSON bodies and URL-encoded data
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files (like your HTML file)
 app.use(express.static(path.join(__dirname, 'public'))); // Assuming login.html is in a folder named 'public'
@@ -54,9 +56,9 @@ app.post('/login', (req, res) => {
             console.log("Login successful.");
             // Redirect based on user type
             if (user.user_type === 'faculty') {
-                return res.redirect('/profile_fac.html'); // Redirect to faculty profile
+                return res.redirect('/homepage_fac.html'); // Redirect to faculty profile
             } else if (user.user_type === 'student') {
-                return res.redirect('/profile_stud.html'); // Redirect to student profile
+                return res.redirect('/homepage_stud.html'); // Redirect to student profile
             } else {
                 return res.status(400).send("Invalid user type");
             }
@@ -66,6 +68,69 @@ app.post('/login', (req, res) => {
         }
     });
 });
+
+app.post('/submit-task', (req, res) => {
+    const { department, facultyName, title, description, deadline, teamSize, additionalRequirements } = req.body;
+
+    // Prepare an SQL query to insert data into the tasks table
+    const query = "INSERT INTO tasks (department, facultyName, title, description, deadline, teamSize, additionalRequirements) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    db.query(query, [department, facultyName, title, description, deadline, teamSize, additionalRequirements], (err, result) => {
+        if (err) {
+            console.error("Error saving task:", err);
+            return res.status(500).send("Error saving task");
+        }
+
+        console.log('Task Submitted:', {
+            department,
+            facultyName,
+            title,
+            description,
+            deadline,
+            teamSize,
+            additionalRequirements
+        });
+
+        // Send a response
+        res.send('Task has been submitted successfully!');
+    });
+});
+
+app.post('/submit-task', (req, res) => {
+    console.log('Received data:', req.body); // Log incoming data
+
+    const { department, facultyName, title, description, deadline, teamSize, additionalRequirements } = req.body;
+
+    // Check if any required fields are missing
+    if (!department || !facultyName || !title || !description || !deadline || !teamSize || !additionalRequirements) {
+        return res.status(400).send("Missing required fields");
+    }
+
+    const query = "INSERT INTO tasks (department, facultyName, title, description, deadline, teamSize, additionalRequirements) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    db.query(query, [department, facultyName, title, description, deadline, teamSize, additionalRequirements], (err, result) => {
+        if (err) {
+            console.error("Error saving task:", err.code, err.sqlMessage);
+            return res.status(500).send("Error saving task");
+        }
+
+        res.send('Task has been submitted successfully!');
+    });
+});
+
+
+app.get('/tasks', (req, res) => {
+    const query = "SELECT * FROM tasks"; // Adjust this query if you want to filter by user or department
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error("Error fetching tasks:", err);
+            return res.status(500).send("Error fetching tasks");
+        }
+
+        // Send the tasks data as JSON
+        res.json(results);
+    });
+});
+
+
 
 // Start the server
 const PORT = process.env.PORT || 3000;
